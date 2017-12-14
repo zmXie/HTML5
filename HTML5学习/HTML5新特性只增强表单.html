@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>增强表单</title>
+	<style>
+		
+	</style>
+</head>
+<body>
+
+<h1>1.元素概念介绍</h1>
+<pre>
+<p>
+1.form元素：
+  用来定义一个表单，是建立表单的基础元素。（就类似定义表格的table）可将内容发送至服务器。
+  表单的其他元素包含在form元素中，其主要子元素有：input、button、select...<br>
+  form元素属性：
+  action：指定表单的发送地址（服务器地址）。
+  method：表单数据发送至服务器的方法，常用的有两种：get、post<br>
+2.input元素：
+  用来设置表单中的内容项，比如输入内容的文本框，按钮等。
+  不仅可以使用在表单中，还可以在表单之外使用。<br>
+  input元素的属性：
+  type属性：指定输入内容的类型，默认为text：单行文本框;<br>
+           password:密码状态输入；<br>
+           submit：提交按钮，点击将数据发送至服务器；<br>
+           reset：重置按钮；<br>
+           button：普通按钮；<br>
+           image:图片按钮;<br>
+           hidden:隐藏字段，不会显示到页面上，但是会提交到服务器;<br>
+           email：表示要输入一个电子邮箱，会自动对内容进行检测,是一个新增的元素，浏览器版本低可能不支持;<br>
+           url:表示是一个网址输入框，必须输入网址；<br>
+           tel:表示是一个电话号码输入框，填写的必须是电话号码。<br>
+           number：表示只能输入数字类型；可以配合input的max/min/step/value来规定允许输入的最大值/最小值/步长/默认值。<br>
+           range(活动条):跟number类似，不过是滑动条的显示状态。
+           time/date/week/month/datetime/datetime-local:时间类，选择跟时间相关的input；浏览器版本低可能显示有问题。<br>
+           color：建立一个颜色输入框，浏览器版本低可能不支持。<br>
+           search:建立一个搜索框，提供用户输入搜索的关键词；浏览器版本低可能不支持。
+           file：用来创建一个文件选取的输入框，可通过accept属性规定选取文件的类型，比如图片/视频；multiple属性设置多项选择；浏览器版本低可能不支持。
+           checkbox:复选框，用来创建一个复选框（可以多项选择）；通过checked属性克将某个设为已选状态
+           radio：单选框；必须将同一组单选项设置为同一个name属性值。
+           
+  name属性：输入内容识别名称，传递参数时候的参数名称。
+  value属性：默认值。
+  maxlength：输入的最大数字。
+  readonly:只读，内容不能修改。
+  disable:不可用，且不会提交。
+  required:必填项，不填不能提交。
+  autofocus:自动获得焦点。
+  accesskey:指定快捷键windows中，指定快捷键后，按Alt+“快捷键”，便会获得焦点。
+  tabindex：指定按tab键时，项目间的移动顺序。
+  autocomplete：属性值为on/off，定义是否开启浏览器自动记忆功能。
+  pattern:设定输入类型的正则表达式。
+  等等..<br>
+3.select元素：
+  用来建立一个下拉菜单选项列表；
+  不仅可以在表单中使用，还可以在其他块元素和内联元素中使用；
+  select只是定义一个下拉菜单列表，其具体列表项要通过option元素建立；
+  option元素可以用来建立一个选项，即下拉列表的一个菜单项；
+  当对表单进行提交的时候只是提交option里面的value值；
+  optgroup元素用来对option元素进行组合分组
+  sizes用来定义select当前显示选项的个数；
+  multiple属性用来定义是否可以多选；
+  可以添加disabled属性和autofocus属性；
+4.datalist元素：
+  HTML5新增元素，用来建立一个选项列表；
+  datalist元素的内容不会直接显示在网页上，只是会在用户输入时作为候选项；
+  通常与input元素配合使用；
+5.HTML5新增表单属性
+  form属性：将表单外的内容与表单进行关联。
+  novalidate属性：设置数据提交时不进行验证。
+  enctype属性：规定在发送到服务器之前应该如何对表单数据进行编码。通常情况下我们使用默认值即可。
+  accept-charset属性：规定服务器处理表单数据所接受的字符集。服务器必须支持这些字符集，从而得以正确的解析表单中的数据，默认为“unknown”，表示表单的字符集与包含表单表单的文档字符集相同。
+6.Label元素及其属性
+  用来为input元素定义标注（标记），建立一个与之相关联的标签。
+  for属性，让标签与指定的input元素建立关联。
+  将input元素包含该在label标签中。
+  可以通过accesskey建立快捷键。
+  属性：
+  在option元素中可以设定比标签内容更优先的选项。
+  optgroup的分组名称（区头）。
+7.textarea元素（textView）
+  rows属性：设置多行文本的行数（高度）。
+  cols属性：设置多行文本每行显示的字数（宽度）。
+8.button元素
+  用来建立一个按钮，从功能上来说，与input元素建立的按钮是相同的。
+  button元素是双标签，起内部可以配置图片与文字，进行更复杂的样式设计。
+  不仅可以在表单中使用，还可以在其他块元素和内联元素中使用。
+  如果在表单中使用button元素，不同浏览器会提交不同的值，所以button适合在表单之外中使用。
+9.表单重写属性
+  表单重写属性适用于提交按钮：
+  input或提交功能的button的相关属性：
+  formaction：修改form的action。
+  formenctype：重写表单的enctype属性。
+  formmethod：重写表单的method属性。
+  formnovalidate：重写表单的novalidate属性。
+  formtarget：重写表单的target属性。
+10.output元素：数据的输出
+  output元素是HTML5新增的元素，用来设置不同数据的输出。
+  output元素的输出内容是由代码控制的
+  output元素的属性：name属性：定义对象的唯一名称（提交表单时使用）
+                  form属性：定义所属的一个或多个表单
+                  for属性：定义输出域相关的一个或多个元素
+  oninput表单事件：当用户对元素数据的输入时触发
+  parseInt()是一个javascript函数，它可以解析一个字符串，并返回一个整数
+11.新增的progress元素：建立一个进度条。
+   通常与JS一同使用，来显示任务的进度。
+   低版本浏览器不支持。
+   max属性：最大值。
+   value：当前默认进度。
+12.meter元素：建立一个度量条，用来表示度量衡的评定。
+   通常与JS一同使用。来显示任务的进度。
+   value：当前默认值。
+   max：范围最大值，默认为1。
+   min：范围最小值。默认为0。
+   low：规定为视为最低的标准。
+   high：规定被视为高标准。
+   optimum:最佳值，在max与min中间
+13.fieldset元素：可将表单内的相关元素分组
+   当一组表单元素放到fieldset标签内时，浏览器会加个边框
+   没有必需或唯一的属性。form、disabled属性可用
+   legend元素：为fieldset元素定义标题
+14.keygen元素：建立一个秘钥生成器
+   当提交表单时，私钥存储在本地。公钥发送到服务器。主要作用是提供一种用户验证身份的方法
+   使用时注意不同浏览器支持程度不同；目前IE和Safari暂不支持
+   name、form、autofocus、disabled
+   challenge属性：将keygen的值设置为在提交时询问
+   keytype属性：定义秘钥类型，如设置rsa，则生成RSA秘钥
+15.details/summary元素（展开收起功能）
+   details元素：用于描述文档或文档某部分的细节。
+               通常与summary配合使用，可以为details定义标题。标题可见，点击标题会显示detials内容
+               open属性：规定在HTML页面上details是可见的。
+
+
+
+</p>
+</pre>
+<hr>
+
+	<h1>2.form元素演示</h1>
+	<form action="http://hao.360.cn/" method="get" target="_blank" id="bdzy">
+		<input type="hidden" name="tj" value="100">
+		用户名：<input type="text" name="user" value="auo" autofocus="" tabindex="1" autocomplete="on"><br><br>
+		密码：<input type="password" name="ps"  maxlength="6" required="required" accesskey="B" tabindex="3"><br><br>
+		邮箱：<input type="email" name="email" tabindex="2"><br><br>
+		国家：<input type="" name="cy" value="中国" readonly="readonly"><br><br>
+		地址：<input type="" name="address" value="xx省xx市xx县" disabled="disabled"><br><br>
+		人数: <input type="number" name="person" max="10" min="1" step="2" value="3"><br><br>
+		比例：<input type="range" name="percent" max="100" min="0" step="5" value="50"><br><br>
+		日期：<input type="time" name="time"><br><br>
+		颜色：<input type="color" name="color"><br><br>
+		搜索：<input type="search" name="search"><br><br>
+	    文件：<input type="file" name="file" accept="image/png" multiple="multiple"><br><br>
+		<input type="submit">
+		<input type="reset">
+		<input type="button" value="确定">
+		<!-- <input type="image" src="http://img0.imgtn.bdimg.com/it/u=1257261666,1562029974&fm=21&gp=0.jpg"> -->
+
+		<h3>你最想学的课程:</h3>
+		<input type="checkbox" name="ck" value="A" id="pmsj">
+		<label for="pmsj">平面设计</label>
+		<label><input type="checkbox" name="ck" value="B">C</label>
+		<input type="checkbox" name="ck" value="C">JAVA
+		<input type="checkbox" name="ck" value="D" checked="checked">HTML5
+		<input type="checkbox" name="ck" value="E">OC
+
+		<h3>请问你是:</h3>
+		<input type="radio" name="rad" value="A" checked="">先生<br><br>
+		<input type="radio" name="rad" value="B">女士<br><br>
+		<input type="radio" name="rad" value="C">咳咳<br><br>
+
+		<h3>选择您要查找的课程:</h3>
+		<select name="myselect">
+			<optgroup label="主要系列">
+				<option value="OC" label="Object-C">OC</option>
+				<option value="C">C</option>
+				<option value="JS">JS</option>
+				<option value="HTML5">HTML5</option>
+			</optgroup>
+			<optgroup label="建筑系列">
+				<option>建筑CAD</option>
+			</optgroup>
+		</select><br><br>
+
+		<input type="text" name="dl" list="datalist"><br>
+			<datalist id="datalist">
+				<option value="OC">OC</option>
+				<option value="C">C</option>
+				<option value="CAD">CAD</option>
+				<option value="JS">JS</option>
+				<option value="HTML5">HTML5</option>
+			</datalist>
+
+		<input type="submit" name="tj" formaction="http://www.baidu.com" formnovalidate="">
+
+	</form>
+	
+	表单之外(将表单之外的信息关联到form表单)：<br>
+	<input type="text" name="bdzw" form="bdzy"><br><br>
+
+	用户名：<input type="text" name=""><br>
+	建议:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea rows="2" cols="20" placeholder="提交你的建议：" name="ta" form="bdzy"></textarea><br><br>
+
+	<h4>按钮</h4>
+	<button style="background:#00ffff;border-radius:6px;width:80px;height:40px"><img src="" width="12"> 哈哈</button><br><br><br>
+
+	<form action="" id="myform" oninput="num.value = parseInt(num1.value)+parseInt(num2.value)">
+		<input type="number" name="num1" id="num1">+
+		<input type="number" name="num2" id="num2">=
+		<output name="num" for="num1 num2"></output><br><br>
+		<!-- <progress value="5" max="10"><br> -->
+		<meter value="60" max="100" min="0" high="80" low="50" optimum="60"></meter>
+
+	</form><br><br>
+
+	<form target="_bland" action="http://www.baidu.com">
+		<fieldset> 
+			<legend>用户登录系统</legend>
+			用户名：<input type="text" name="user">
+			加密：<keygen name="mykey">
+			验证码：<input type="text" name="code" pattern="[0-9]{4}"><br>
+			<input type="submit" name="submit">
+		</fieldset>
+	</form><br><br>
+
+    <details>
+	    <summary>点击率</summary>
+	    <p>该文章目前点记录：6000</p>
+    	<ul>
+    		<li>8000以上：很火</li>
+    		<li>3000-8000:一般</li>
+    		<li>3000一下：人气不高</li>
+    	</ul>
+    </details>
+
+	<hr>
+
+
+
+</body>
+</html>

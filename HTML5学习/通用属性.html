@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<title>通用元素</title>
+		<!-- 	1.name和id属性：属性值必须是大小写英文字母开头；
+		其余部分可以包含字母、数字、下划线、点等符号；
+		属性值是区分大小写的
+		2.属性值为数值时，必须输入正整数，不可为0；
+		3.width、height是属性值：如果设置为正整数时，单位默认为px，不需要加上单位；但是在style中必须注明单位，否则会出错。 -->
+		<!-- 通过css统一设置样式 -->
+		<style type="text/css">
+			
+			/*1.id使用#标识*/
+			#div0{background:green;width:100%;height:500px}
+			#div1{background:red;width:100%;height:10%}
+			/*float:left(从左往右浮动布局,当不需要浮动的时候clear：left)*/
+			#div2{background:gray;width:30%;height:80%;float:left}
+			#div3{background:orange;width:70%;height:80%;float:left}
+			#div4{width:100%;height:10%;clear:left}
+		
+			<!-- /*2.class：如果多个标签的class是一样的，那么他们可以统一设置风格；使用.来标识*/ -->
+			.class2{background: blue}
+			.class1{background: yellow;color: gray}
+		
+		</style>
+
+		<!--
+					/*3.title:当鼠标放上去的时候可以显示这个title*/
+					/*4.dir：用于设定元素标签内容文字方向，lft:左；rtl：右。bdo中有使用过*/
+		/*5.lang：用于指定语言，比如中文还是英文，zh-cn/en;出来在html中设置，它还可以咋特定的元素中使用，改变改元素使用的语言*/ -->
+		</style>
+	</head>
+	<body>
+		<div id="div0">
+			
+			<div id="div1" class="class1" title="看什么看">我是标题</div>
+			<div id="div2" dir="rtl">我是导航</div>
+			<div id="div3">我是iframe内联框架</div>
+			<div  class="class1">我是尾部</div>
+			<div dir="rtl">
+				xixi
+			</div>
+
+		</div>
+	</body>
+</html>

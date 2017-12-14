@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<title>特殊符号的使用与style元素样式基础</title>
+		<!-- 内部样式表：如果整个html样式一样，可以在head里面统一设置style -->
+		<style type="text/css">
+			/*设置表的标题风格:字体大小为20像素，字体颜色为红色*/
+			caption{font-size: 20px;color: red}
+			/*统一设置段落标签格式*/
+			p{color: red;background:gray;text-align: center;}
+			/*统一设置表头格式*/
+			thead{background: SteelBlue}
+			/*统一设置表体格式*/
+			tbody{background: PeachPuff}
+			/*统一设置表尾格式*/
+			tfoot{background: slategray}
+			/*统一设置每行元素居中*/
+			tr{text-align: center}
+			/*等等*/
+		</style>
+	</head>
+	<body>
+		<!-- 1.html 实体元素的使用（在html中这些符号是以标签的存在的，直接输入，浏览器是不能识别的，所以用到这些实体元素）
+		&nbsp、&#160:空格符号
+		&lt、&#60:小于符号
+		&gt、&#62:大于符号
+		&amp、&#38:&符号
+		&quot、&#34:双引号
+		&plusmn、&#177:正负符号（土）
+		&copy、&#169:著作权符号
+		&reg、&#174:注册商标
+		等等，用的时候可以搜索html实体符号
+		特殊符号&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&#160&#160&#160&#160&#160的使用 -->
+		<!-- 2.style元素样式基础 -->
+		<!-- <link rel="stylesheet" type="text/css" href=""> -->
+		<p style="background:gray;color:red">style</p>
+		<p>style</p>
+		<p>style</p>
+		<p>style</p>
+		<table border="1" align="center" cellpadding="2" cellspacing="">
+			<colgroup span="4">
+			<col style="width:100px;">
+			<col style="width:150px;" span="2">
+			<col style="width:100px;">
+
+			</colgroup>
+			<caption>特殊符号的使用</caption>
+			<thead>
+				<tr style="height:40px;font-size:18px"><th>符号</th><th>实体名称</th><th>实体数值</th><th>描述</th></tr>
+			</thead>
+			<tbody>
+				<tr><td></td><td>&ampnbsp</td><td>&amp#160</td><td>空格<td></tr>
+				<tr><td>&lt</td><td>&amplt</td><td>&amp#60</td><td>小于<td></tr>
+				<tr> <td>&gt</td> <td>&ampgt</td> <td>&amp#62</td> <td>大于<td></tr>
+				<tr> <td>&amp</td> <td>&ampamp</td> <td>&amp#38</td> <td>连接符号<td></tr>
+				<tr> <td>&quot</td> <td>&ampquot</td> <td>&amp#34</td> <td>双引号<td></tr>
+				<tr> <td>&plusmn</td> <td>&ampplusmn</td> <td>&amp#177</td> <td>正负值<td></tr>
+				<tr> <td>&copy</td> <td>&ampcopy</td> <td>&amp#169</td> <td>著作权<td></tr>
+				<tr> <td>&reg</td> <td>&ampreg</td> <td>&amp#174</td> <td>注册商标<td></tr>
+			</tbody>
+			<tfoot>
+			<tr><td colspan="4" style="font-size:14px">其他的特殊符号大家可以网上搜索一下，知道常用的即可</td></tr>
+			</tfoot>
+		</table>
+	</body>
+</html>

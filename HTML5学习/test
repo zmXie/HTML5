@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		<title>拖鞋帮</title>
+
+		<script type="text/javascript">
+		
+			function myFunction() {
+				document.getElementsByTagName('')
+			}
+		</script>
+	</head>
+
+	<body>
+
+	    <span style="color: rgb(51, 51, 51); font-family: &quot;Arial Normal&quot;, Arial; font-size: 13px;">感谢您选择诚汇通网站并成为本网站用户（本网站隶属于深圳市诚汇通金融信息有限公司，域名为www.chenghuitong.net，公司地址位于深圳市福田区福华三路168号深圳国际商会中心24层）。您成为本网站用户前务必仔细阅读并同意本服务协议，且明确您将作出的所有借款及出借行为和操作均存在一定的风险及均属本人的谨慎操作。本协议作为本网站相关权利、义务条款的附件（与本网站上其他协议配套使用），在您注册成为本网站用户后即对您及本网站产生约束力。</span>
+<p style="margin: 0px; text-rendering: optimizeLegibility; font-feature-settings: 'kern' 1; font-kerning: normal; color: rgb(51, 51, 51); font-family: &quot;Arial Normal&quot;, Arial; font-size: 13px;">&nbsp;</p>
+<p style="margin: 0px; text-rendering: optimizeLegibility; font-feature-settings: 'kern' 1; font-kerning: normal; color: rgb(51, 51, 51); font-family: &quot;Arial Normal&quot;, Arial; font-size: 13px;">第一条：诚汇通网站（以下简称&ldquo;本网站&rdquo;）是由深圳市诚汇通金融信息有限责任公司负责运营的投融资（借贷）信息服务平台。本服务协议是约定本平台与本平台会员（包括通过平台注册的借贷各方等，以下简称&ldquo;会员&rdquo;或&ldquo;用户&rdquo;）之间权利义务关系的法律协议。</p>
+	</body>
+</html>
